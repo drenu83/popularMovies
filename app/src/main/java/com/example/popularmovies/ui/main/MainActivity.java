@@ -44,14 +44,17 @@ public class MainActivity extends AppCompatActivity {
         searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
             @Override
             public boolean onQueryTextSubmit(String query) {
-                adapter.filter(query);
-
+                if (adapter != null) {
+                    adapter.filter(query);
+                }
                 return false;
             }
 
             @Override
             public boolean onQueryTextChange(String newText) {
-                adapter.filter(newText);
+                if (adapter != null) {
+                    adapter.filter(newText);
+                }
                 return false;
             }
         });
