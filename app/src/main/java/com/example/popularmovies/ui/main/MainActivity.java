@@ -20,7 +20,6 @@ import com.example.popularmovies.utils.AlarmSetup;
 public class MainActivity extends AppCompatActivity {
     private RecyclerView recyclerView;
     private MovieAdapter adapter;
-    private SearchView searchView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,7 +40,7 @@ public class MainActivity extends AppCompatActivity {
         });
 
 
-        searchView = findViewById(R.id.searchView);
+        SearchView searchView = findViewById(R.id.searchView);
         searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
             @Override
             public boolean onQueryTextSubmit(String query) {

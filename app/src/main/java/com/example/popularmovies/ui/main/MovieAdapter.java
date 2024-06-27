@@ -43,8 +43,10 @@ class MovieAdapter extends RecyclerView.Adapter<MovieAdapter.MovieViewHolder> {
     public void onBindViewHolder(@NonNull MovieViewHolder holder, int position) {
         Movie movie = filteredMovies.get(position);
         holder.tvTitle.setText(movie.getTitle());
-        holder.tvLanguage.setText(movie.getOriginal_language());
-        holder.tvRating.setText(String.valueOf(movie.getPopularity()));
+        String language = "Language " + movie.getOriginal_language();
+        holder.tvLanguage.setText(language);
+        String popularity = "Popularity " + movie.getPopularity();
+        holder.tvRating.setText(popularity);
 
         Picasso.get().load(Constants.IMAGE_PATH + movie.getPoster_path()).into(holder.ivPoster);
 

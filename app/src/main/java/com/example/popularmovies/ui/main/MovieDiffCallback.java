@@ -27,14 +27,13 @@ class MovieDiffCallback extends DiffUtil.Callback {
 
     @Override
     public boolean areItemsTheSame(int oldItemPosition, int newItemPosition) {
-        // Assuming each movie has a unique ID, we compare them to determine if they are the same item.
+
         return oldMovies.get(oldItemPosition).getId() == newMovies.get(newItemPosition).getId();
     }
 
     @Override
     public boolean areContentsTheSame(int oldItemPosition, int newItemPosition) {
-        // Here we compare the details of each movie. If any detail relevant to the UI has changed,
-        // we return false, indicating that the item has updated content.
+
         Movie oldMovie = oldMovies.get(oldItemPosition);
         Movie newMovie = newMovies.get(newItemPosition);
 
